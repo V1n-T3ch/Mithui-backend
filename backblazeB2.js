@@ -76,7 +76,7 @@ app.post('/api/upload', upload.single('file'), async (req, res) => {
             bucketId: process.env.B2_BUCKET_ID
         });
 
-        const fileName = `news-events/${Date.now()}-${req.file.originalname.replace(/\s+/g, '_')}`;
+        const fileName = `images/${Date.now()}-${req.file.originalname.replace(/\s+/g, '_')}`;
 
         const { data } = await b2.uploadFile({
             uploadUrl,
